@@ -1,6 +1,6 @@
 // Runway service worker: cache the app shell for instant, offline loads.
 // Bump VERSION on every deploy so clients pick up new files.
-const VERSION = 'runway-v1';
+const VERSION = 'runway-v2';
 const SHELL = ['./', './index.html', './styles.css', './manifest.webmanifest', './js/app.js', './js/state.js', './js/store.js', './js/sync.js', './js/ui.js', './js/views.js', './js/sheets.js', './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
