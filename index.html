@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <title>Runway</title>
+  <meta name="description" content="Personal pre-departure task runway.">
+  <meta name="theme-color" content="#0b0d11">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Runway">
+  <meta name="robots" content="noindex">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ff8a5c"/><stop offset=".5" stop-color="#ff3fa4"/><stop offset="1" stop-color="#22d3e6"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="ambient" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+
+  <div id="app">
+    <div class="rail" aria-hidden="true">
+      <i class="led" style="--c:#ff5a36"></i><i class="led" style="--c:#ffb02e"></i><i class="led" style="--c:#22d3e6"></i><i class="led" style="--c:#ff3fa4"></i><i class="led" style="--c:#32d583"></i><i class="led" style="--c:#ffb02e"></i>
+    </div>
+    <header class="top" id="top"></header>
+    <main id="view" tabindex="-1"><div class="boot">Loading…</div></main>
+    <button type="button" class="b3 coral fab" id="fab" data-action="add" aria-label="Add task"></button>
+    <nav class="nav" id="nav" aria-label="Views"></nav>
+  </div>
+  <div id="toasts"></div>
+
+  <script type="module" src="./js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>
